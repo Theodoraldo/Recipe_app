@@ -5,6 +5,8 @@
     <span aria-hidden="true"></span>
   </a>
 
+  <h1 class="has-text-white"><%= current_user.email %></h1>
+
   <div class="navbar-end">
     <%= link_to "Sign Out", destroy_user_session_path(@post), method: :delete, data: { "turbo-method": :delete }, class: "button is-small is-dark" %>
   </div>
