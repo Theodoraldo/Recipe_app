@@ -1,0 +1,28 @@
+<h1>Add New Food</h1>
+<div class="container" style="width: 45%;">
+  <%= form_with model: @food, url: foods_path, method: :post, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "label" %>
+      <%= form.text_field :name, class: "input" %>
+    </div>
+
+    <div class="mb-3"> <!-- Add this enclosing div -->
+      <%= form.label :measurement_unit, class: "label" %>
+      <%= form.text_field :measurement_unit, class: "input" %>
+    </div>
+
+    <div class="mb-3"> <!-- Add this enclosing div -->
+      <%= form.label :price, class: "label" %>
+      <%= form.text_field :price, class: "input" %>
+    </div>
+
+    <div class="mb-3"> <!-- Add this enclosing div -->
+      <%= form.label :quantity, class: "label" %>
+      <%= form.text_field :quantity, class: "input" %>
+    </div>
+
+    <div>
+      <%= form.submit class: "button is-info" %>
+    </div>
+  <% end %>
+</div>
