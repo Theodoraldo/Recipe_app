@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(99, 99, 102);
+  overflow: auto;
+}
