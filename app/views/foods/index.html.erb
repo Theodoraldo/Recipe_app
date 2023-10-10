@@ -2,3 +2,24 @@
 <div class=" container is-flex is-justify-content-end mb-4">
   <%= link_to "Add Food", new_food_path, class: "button is-info" %>
 </div>
+
+<table>
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Measuring Unit</th>
+          <th>Unit Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td> <%= food.name %></td>
+            <td> <%= food.measurement_unit %></td>
+            <td> <%= food.price %></td>
+            <td><%= button_to 'Delete', food_path(food.id), method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
