@@ -1,6 +1,6 @@
 class ShoppingListController < ApplicationController
-    before_action :authenticate_user!
-  
+  before_action :authenticate_user!
+
   def index
     @user = current_user
 
@@ -13,13 +13,13 @@ class ShoppingListController < ApplicationController
 
     # Iterate through each recipe
     @recipes.each do |recipe|
-    #   recipe.ingredients.each do |ingredient|
-    #     # Check if the user's general food list includes the ingredient
-    #     unless @user.food_items.include?(ingredient.food)
-    #       @missing_food_items << ingredient.food
-    #       @total_price += ingredient.food.price
-    #     end
-    #   end
+      #   recipe.ingredients.each do |ingredient|
+      #     # Check if the user's general food list includes the ingredient
+      #     unless @user.food_items.include?(ingredient.food)
+      #       @missing_food_items << ingredient.food
+      #       @total_price += ingredient.food.price
+      #     end
+      #   end
     end
   end
 end
