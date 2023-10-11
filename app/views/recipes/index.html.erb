@@ -1,2 +1,7 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1 class="title is-flex is-justify-content-center">List of Recipes</h1>
+
+<div class="container" style="width: 60%;">
+  <div class="container is-flex is-justify-content-end mb-4">
+    <%= link_to "Add Recipe", new_recipe_path, class: "button is-info" %>
+  </div>
+</div>
