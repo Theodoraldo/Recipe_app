@@ -2,8 +2,8 @@
 
 <div class="container" style="width: 60%;">
   <div class="is-flex is-justify-content-space-between">
-    <h1>Amount of food items to buy : <%= @foods.count %></h1>
-    <h1>Total value of food needed : <%= number_to_currency(@foods.sum(&:price)) %></h1>
+    <h1><strong>Amount of food items to buy : <%= @foods.count %></strong></h1>
+    <h1><strong>Total value of food needed : <%= number_to_currency(@foods.sum(&:price)) %> </strong></h1>
   </div>
   <div class="is-flex mt-4 mb-4">
     <table class="table is-hoverable is-fullwidth">
