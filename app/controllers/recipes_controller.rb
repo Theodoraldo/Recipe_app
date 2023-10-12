@@ -31,13 +31,8 @@ class RecipesController < ApplicationController
 
   def toggle_public
     @recipe = Recipe.find(params[:id])
-    if @recipe.public == false
-      @recipe.change_public_status
-      redirect_to @recipe, notice: 'Recipe status has changed.'
-    else
-      @recipe.change_public_status
-      redirect_to @recipe, notice: 'Recipe status has changed.'
-    end
+    @recipe.change_public_status
+    redirect_to @recipe, notice: 'Recipe status has changed.'
   end
 
   private
