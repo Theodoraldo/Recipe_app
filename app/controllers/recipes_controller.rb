@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = current_user.recipes.order(created_at: :desc)
+    @recipes = current_user.recipes.includes(:user) if user_signed_in?
   end
 
   def show
