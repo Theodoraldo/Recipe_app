@@ -14,7 +14,7 @@
   <p class="my-3"><strong>Cooking time :</strong> <%= @recipe.cooking_time %> hours</p>
   <p class="my-3"><strong>Steps go here ...</p>
   <div class="is-flex is-justify-content-space-between mt-3">
-    <%= link_to 'Generate Shopping List',recipe_path, class: "button is-info is-light" %>
+    <%= link_to 'Generate Shopping List', general_shopping_list_path, class: "button is-info is-light" %>
     <% if @recipe.user == current_user %>
       <%= link_to 'Add Ingredient',new_recipe_recipe_food_path(@recipe), class: "button is-warning is-light" %>
     <% end %>
