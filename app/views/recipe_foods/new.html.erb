@@ -1,0 +1,27 @@
+<h1 class="title is-flex is-justify-content-center">Add Ingredient to <%= @recipe.name%></h1>
+
+<div class="container" style="width: 50%;">
+ 
+  <% if flash[:error].present? %>
+    <div class="subtitle has-text-danger-dark has-background-danger-light">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+  <%= form_with scope: :recipe_food, url:  recipe_recipe_foods_path do |form| %>
+    <div class="mb-3">
+      <%= form.label :food_id, "Food", class: "label" %>
+      <%= form.collection_select :food_id, @foods, :id, :name, { prompt: "Select food item" }, class: "input" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :quantity, "Quantity", class: "label" %>
+      <%= form.number_field :quantity, class: "input" %>
+    </div>
+
+    <div class="d-flex justify-content-between gap-4">
+      <%= form.submit "Add Ingredient", class: "button is-info is-light" %>
+      <%= link_to "Cancel", recipe_path(@recipe), class: "button is-secondary" %>
+    </div>
+  <% end %>
+</div>

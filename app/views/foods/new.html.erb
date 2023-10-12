@@ -1,24 +1,25 @@
-<h1>Add New Food</h1>
-<div class="container" style="width: 45%;">
+<h1 class="title is-flex is-justify-content-center">Add New Food</h1>
+
+<div class="container" style="width: 50%;">
   <%= form_with model: @food, url: foods_path, method: :post, local: true do |form| %>
     <div class="mb-3">
       <%= form.label :name, class: "label" %>
       <%= form.text_field :name, class: "input" %>
     </div>
 
-    <div class="mb-3"> <!-- Add this enclosing div -->
+    <div class="mb-3">
       <%= form.label :measurement_unit, class: "label" %>
       <%= form.text_field :measurement_unit, class: "input" %>
     </div>
 
-    <div class="mb-3"> <!-- Add this enclosing div -->
+    <div class="mb-3">
       <%= form.label :price, class: "label" %>
-      <%= form.text_field :price, class: "input" %>
+      <%= form.number_field :price, class: "input", step: 0.01 %>
     </div>
 
-    <div class="mb-3"> <!-- Add this enclosing div -->
+    <div class="mb-3">
       <%= form.label :quantity, class: "label" %>
-      <%= form.text_field :quantity, class: "input" %>
+      <%= form.number_field :quantity, class: "input", step: 0.01 %>
     </div>
 
     <div>
@@ -26,3 +27,4 @@
     </div>
   <% end %>
 </div>
+
