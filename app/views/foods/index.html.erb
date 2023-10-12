@@ -19,8 +19,8 @@
           <tr>
             <td> <%= food.name %></td>
             <td> <%= food.measurement_unit %></td>
-            <td> <%= food.price %></td>
-            <td><%= button_to 'Delete', food_path(food.id), method: :delete, class: "button is-danger is-small" %></td>
+            <td> $ <%= food.price %></td>
+            <td><%= button_to 'Delete', food_path(food.id), method: :delete, class: "button has-background-danger-light has-text-danger is-small" %></td>
           </tr>
         <% end %>
       </tbody>
