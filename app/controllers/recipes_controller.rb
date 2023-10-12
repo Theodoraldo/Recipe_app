@@ -29,6 +29,17 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, notice: 'Recipe deleted successfully.'
   end
 
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    if @recipe.public == false
+      @recipe.change_public_status
+      redirect_to @recipe, notice: 'Recipe status has changed.'
+    else
+      @recipe.change_public_status
+      redirect_to @recipe, notice: 'Recipe status has changed.'
+    end
+  end
+
   private
 
   def recipe_params
