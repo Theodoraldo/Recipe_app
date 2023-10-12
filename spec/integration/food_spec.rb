@@ -15,7 +15,7 @@ RSpec.describe 'foods/index', type: :feature do
 
     it 'displays Foods list in navbar' do
       visit 'foods'
-      expect(page).to have_content 'Food'
+      expect(page).to have_content('List of Food')
     end
 
     it 'displays a list of the foods' do
@@ -26,13 +26,13 @@ RSpec.describe 'foods/index', type: :feature do
 
     it 'has a button to add new food' do
       visit 'foods'
-      expect(page).to have_content 'Add ingredient'
+      expect(page).to have_link('Add Food')
     end
 
     it 'should take you to add food form when clicking on the button' do
       visit 'foods'
-      click_on 'Add ingredient'
-      expect(current_path).to eql new_user_food_path(@user1)
+      click_on 'Add Food'
+      expect(current_path).to eql new_food_path
     end
   end
 end

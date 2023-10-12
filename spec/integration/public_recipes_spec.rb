@@ -17,10 +17,10 @@ RSpec.describe 'public_recipes/index.html.erb', type: :feature do
 
     it 'shows a list of public recipes' do
       visit '/public_recipes'
-      expect(page).to have_content 'Public Recipes'
+      expect(page).to have_content 'List of Public Recipes'
       expect(page).to have_content 'Burger'
-      expect(page).to have_content 'Total Food of item'
-      expect(page).to have_content 'Total Price'
+      expect(page).to have_content 'Total food items'
+      expect(page).to have_content 'Total price'
     end
 
     it 'does not allow users to delete a recipe' do
