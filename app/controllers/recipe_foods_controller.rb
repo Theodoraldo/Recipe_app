@@ -1,7 +1,7 @@
 class RecipeFoodsController < ApplicationController
-   before_action :set_recipe_food, only: [:destroy]
+  before_action :set_recipe_food, only: [:destroy]
 
-   def new
+  def new
     @recipe = Recipe.find(params[:recipe_id])
     @foods = Food.all
     @recipe_food = @recipe.recipe_foods.new
