@@ -25,12 +25,12 @@ RSpec.describe 'recipes/index', type: :feature do
 
     it 'shows buttons to add new recipe' do
       visit '/recipes'
-      expect(page).to have_content('Add new Recipe')
+      expect(page).to have_content('Add Recipe')
     end
 
     it 'should take you to add new recipe form when clicking on the add new recipe button' do
       visit '/recipes'
-      click_on 'Add new Recipe'
+      click_on 'Add Recipe'
       expect(current_path).to eql '/recipes/new'
     end
   end

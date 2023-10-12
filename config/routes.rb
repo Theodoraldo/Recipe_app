@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   resources :foods, except: :update
   resources :recipes, except: :update do
-    resources :recipe_foods, only: [:new, :create, :destroy]
+    member do
+      put :toggle_public
+    end
+    resources :recipe_foods, only: [:index, :new, :create, :destroy]
   end
-  resources :recipe_foods, only: [:index]
   get '/public_recipes', to: 'public_recipes#index', as: 'public_recipes'
   get '/general_shopping_list', to: 'shopping_list#index', as: 'general_shopping_list'
 end

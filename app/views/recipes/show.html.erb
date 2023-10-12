@@ -4,11 +4,15 @@
   <div class="is-flex is-justify-content-space-between">
     <p class="my-3"><strong>Preparation time :</strong> <%= @recipe.preparation_time %> hours</p>
   <div class="is-flex is-justify-content-center is-align-items-center">
-    <div class="mr-3">Public :</div>
+  <div class="mr-3">Public :</div>
+
+  <%= form_with model: @recipe, url: toggle_public_recipe_path(@recipe), method: :put, local: true do |form| %>
     <div class="buttons has-addons">
-      <button class="button is-small <%= @recipe.public == true ? 'is-dark is-light' : '' %>">Yes</button>
-      <button class="button is-small <%= @recipe.public == false ? 'is-dark is-light' : '' %>">No</button>
+      <%= form.submit 'Yes', class: (@recipe.public == true ? 'button is-small is-dark is-light' : 'button is-small') %>
+      <%= form.submit 'No', class: (@recipe.public == false ? 'button is-small is-dark is-light' : 'button is-small') %>
     </div>
+  <% end %>
+
   </div>
   </div>
   <p class="my-3"><strong>Cooking time :</strong> <%= @recipe.cooking_time %> hours</p>
