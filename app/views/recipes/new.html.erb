@@ -9,12 +9,12 @@
       </div>
 
       <div class="mb-3">
-        <%= form.label :preparation_time, class: "label" %>
+        <%= form.label :preparation_time,"Preparation Time (hours)", class: "label" %>
         <%= form.number_field :preparation_time, class: "input", step: 0.01 %>
       </div>
 
       <div class="mb-3">
-        <%= form.label :cooking_time, class: "label" %>
+        <%= form.label :cooking_time, "Cooking Time (hours)", class: "label" %>
         <%= form.number_field :cooking_time, class: "input", step: 0.01 %>
       </div>
 
@@ -26,7 +26,7 @@
       <div class="mb-3">
         <%= form.label :public, class: "label" %>
         <%= form.label :public, "Yes" %>
-        <%= form.radio_button :public, true %>
+        <%= form.radio_button :public, true, class: "mr-4" %>
         <%= form.label :public, "No" %>
         <%= form.radio_button :public, false %>
       </div>
