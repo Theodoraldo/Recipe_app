@@ -1,0 +1,28 @@
+<h1 class="title is-flex is-justify-content-center">Missing Food Items</h1>
+
+<div class="container" style="width: 60%;">
+  <div class="is-flex is-justify-content-space-between">
+    <h1><strong>Amount of food items to buy : <%= @foods.count %></strong></h1>
+    <h1><strong>Total value of food needed : <%= number_to_currency(@foods.sum(&:price)) %> </strong></h1>
+  </div>
+  <div class="is-flex mt-4 mb-4">
+    <table class="table is-hoverable is-fullwidth">
+      <thead>
+        <tr>
+          <th class="has-text-dark-light">Food</th>
+          <th class="has-text-dark-light">Quantity</th>
+          <th class="has-text-dark-light">Unit Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td> <%= food.name %></td>
+            <td> <%= food.quantity %></td>
+            <td> $ <%= food.price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
